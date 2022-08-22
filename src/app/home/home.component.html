@@ -1,0 +1,75 @@
+<div class="row my-3">
+
+  <div class="col-md-4 py-4 my-3">
+
+    <div class="brdr my-3 w-25 bg-white"></div>
+
+    <h2>Trending Movies <br> To watch right now </h2>
+    <p class="text-muted">Trending Movies To watch right now </p>
+
+    <div class="brdr my-3 w-100 bg-white"></div>
+
+  </div>
+
+  <div *ngFor="let movie of movies " class="col-md-2 py-3">
+    <div class="movie position-relative m-2">
+      <a [routerLink]="['/movieDetails' , movie.id]" class="links">
+        <img [src]="imglink + movie.poster_path" class="w-100">
+        <h3 class="h6 my-4 fw-bolder">{{movie.title}}</h3>
+        <div class="vote bg-lights fw-bolder p-2 position-absolute top-0 end-0">{{movie.vote_average}}</div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row my-3">
+
+  <div class="col-md-4 py-4 my-3">
+
+    <div class="brdr my-3 w-25 bg-white"></div>
+
+    <h2>Trending tv <br> To watch right now </h2>
+    <p class="text-muted">Trending tv To watch right now </p>
+
+    <div class="brdr my-3 w-100 bg-white"></div>
+
+  </div>
+
+  <div *ngFor="let series of tv " class="col-md-2 py-3">
+    <div class="movie position-relative m-2">
+      <a [routerLink]="['/tvdetails' , series.id]" class="links">
+        <img [src]="imglink + series.poster_path" class="w-100">
+        <h3 class="h6 my-4 fw-bolder">{{series.name}}</h3>
+        <div class="vote bg-lights fw-bolder p-2 position-absolute top-0 end-0">{{series.vote_average}}</div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row my-3">
+
+  <div class="col-md-4 py-4 my-3">
+
+    <div class="brdr my-3 w-25 bg-white"></div>
+
+    <h2>Trending people </h2>
+
+    <div class="brdr my-3 w-100 bg-white"></div>
+
+  </div>
+
+  <div *ngFor="let person of persons " class="col-md-2 py-2">
+    <div class="movie position-relative m-2">
+      <a [routerLink]="['/peopledetails' , person.id]" class="links">
+        <img [src]="imglink + person.profile_path" class="w-100" [alt]="person.name">
+        <h3 class="h6 my-4 fw-bolder">{{person.name}}</h3>
+      </a>
+
+    </div>
+  </div>
+
+</div>

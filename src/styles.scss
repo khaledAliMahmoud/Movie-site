@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+body{
+    background-color: #041430;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.bg-lights{
+    background-color: #24beaf !important;
+}
+
+.brdr{
+    height: 1px;
+}
+
+.links, .links:hover{
+    color: white;
+    text-decoration: none;
+}

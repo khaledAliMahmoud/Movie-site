@@ -1,0 +1,23 @@
+<div class="row my-3">
+
+    <div class="col-md-4 py-4 my-3">
+  
+      <div class="brdr my-3 w-25 bg-white"></div>
+  
+      <h2>Trending people </h2>
+  
+      <div class="brdr my-3 w-100 bg-white"></div>
+  
+    </div>
+  
+    <div *ngFor="let person of persons " class="col-md-2 py-2">
+      <div class="movie position-relative m-2">
+        <a [routerLink]="['/peopledetails' , person.id]" class="links">
+          <img [src]="imglink + person.profile_path" class="w-100" [alt]="person.name">
+          <h3 class="h6 my-4 fw-bolder">{{person.name}}</h3>
+        </a>
+  
+      </div>
+    </div>
+  
+  </div>

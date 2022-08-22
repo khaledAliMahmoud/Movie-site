@@ -1,0 +1,27 @@
+
+<h1>Login Now</h1>
+
+<h3 *ngIf="result" class="alert alert-danger">{{result}}</h3>
+
+<form [formGroup]="loginForm" (ngSubmit)="logInBtn(loginForm)">
+
+   
+
+<label for="email">email</label>
+<input type="text" formControlName="email" class="form-control">
+<div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched " class="alert alert-danger my-3 ">    
+<p *ngIf="loginForm.get('email')?.errors?.['required']" >email Is required</p>
+<p *ngIf="loginForm.get('email')?.errors?.['email']">email is invalid</p>
+</div>
+
+<label for="password">password</label>
+<input type="text" formControlName="password" class="form-control">
+<div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched " class="alert alert-danger my-3 ">    
+<p *ngIf="loginForm.get('password')?.errors?.['required']" >password Is required</p>
+<p *ngIf="loginForm.get('password')?.errors?.['pattern']">
+  password start with capital character then small and max length is 6 character </p>
+</div>
+
+<button [disabled]="loginForm.invalid" type="submit" class="btn btn-info my-3">Log In</button>
+
+</form>
