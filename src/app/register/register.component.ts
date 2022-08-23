@@ -25,16 +25,13 @@ export class RegisterComponent implements OnInit {
 
   registerBtn(forminfo:FormGroup){
     this._AuthService.register(forminfo.value).subscribe((res)=>{
-      // if(res.message == 'success'){
-      //   this._Router.navigate(['/login']);
-      // }else{
-      //   this.result = res.message;
-      //   console.log(res.errors);
-        
-      // }
-      console.log(res);
-      
-    })    
+      if(res.message == 'success'){
+        this._Router.navigate(['/login']);
+      }else{
+        this.result = res.message;
+      }
+
+    })
   }
 
   ngOnInit(): void {
